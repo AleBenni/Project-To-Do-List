@@ -1,0 +1,175 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1c1c1c;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-app {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.todo-app h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.task-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.task-input button {
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.filters .filter {
+  background: none;
+  border: none;
+  font-weight: bold;
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.filters .filter.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: black;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task .checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.task.completed .checkmark {
+  background-color: black;
+  color: white;
+}
+
+.task-text {
+  flex: 1;
+}
+
+.delete {
+  color: #333;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .todo-app {
+    padding: 1rem;
+  }
+
+  .task-input input {
+    padding: 0.5rem;
+  }
+
+  .task-input button {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .todo-app {
+    max-width: 600px;
+    padding: 3rem;
+  }
+
+  .todo-app h1 {
+    font-size: 2rem;
+  }
+
+  .task-input input {
+    font-size: 1rem;
+  }
+
+  .task-input button {
+    font-size: 1.5rem;
+  }
+
+  .task-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .todo-app {
+    max-width: 800px;
+    padding: 4rem;
+  }
+
+  .todo-app h1 {
+    font-size: 2.5rem;
+  }
+
+  .task-input input {
+    font-size: 1.2rem;
+  }
+
+  .task-input button {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .task-text {
+    font-size: 1.25rem;
+  }
+}
